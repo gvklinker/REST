@@ -10,6 +10,13 @@ Vue.createApp({
     methods:{
         getAllRecords() {
             this.getRecords(baseUrl)
+            
+        },getByTitle(text) { // filter
+            const url = baseUrl + "?title=" + text
+            this.getRecords(url)
+        },getByArtist(text) {
+            const url = baseUrl + "?artist=" + text
+            this.getRecords(url)
         },async getRecords(url) {
             try {
                 const response = await axios.get(url)
