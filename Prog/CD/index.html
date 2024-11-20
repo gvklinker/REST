@@ -17,7 +17,9 @@
         <div id="app">
             <h2>GET all</h2>
             <button id="getAllButton" v-on:click="getAllRecords" class="btn btn-primary">Get all records</button>
-
+            <input v-model="text" placeholder="text"/>
+            <button v-on:click="getByTitle(text)" class="btn btn-primary">Get by title</button>
+            <button v-on:click="getByArtist(text)" class="btn btn-primary">Get by artist</button>
 
 
             <ul id="recordlist" v-if="records.length">
